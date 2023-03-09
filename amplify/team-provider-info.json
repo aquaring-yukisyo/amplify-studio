@@ -10,6 +10,11 @@
       "StackName": "amplify-studio-staging-10602",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:304975792196:stack/amplify-studio-staging-10602/8fcda390-be16-11ed-b723-0e62a8ed551f",
       "AmplifyAppId": "d38wfa5k9izipw"
+    },
+    "categories": {
+      "auth": {
+        "studioeeaa20c0": {}
+      }
     }
   }
 }

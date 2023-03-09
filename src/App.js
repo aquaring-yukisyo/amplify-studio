@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "@aws-amplify/ui-react/styles.css";
+
+import { Authenticator } from "@aws-amplify/ui-react";
+import {
+  Header,
+  ProfileCardCollection,
+  PersonCreateForm,
+} from "./ui-components";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Authenticator>
+      {({ signOut, user }) => (
+        <main>
+          <Header title="mytitle" description="紹介内容" />
+          <h1>こんにちは、 {user.username} さん</h1>
+          <button onClick={signOut}>サインアウト</button>
+          <ProfileCardCollection />
+
+          <PersonCreateForm />
+        </main>
+      )}
+    </Authenticator>
   );
 }
 
+// export default withAuthenticator(App);
 export default App;
